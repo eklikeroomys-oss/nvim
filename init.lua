@@ -50,7 +50,7 @@ end
 Global_Setup()
 
 -- Clear Lsp log:
-local lsplog = os.getenv("HOME") .. "/.local/state/nvim/lsp.log"
+local lsplog = vim.fn.stdpath('state') .. "/lsp.log"
 local f=io.open(lsplog,"r")
 if f~=nil then
   io.close(f)

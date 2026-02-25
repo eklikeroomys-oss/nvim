@@ -1,5 +1,5 @@
 return {
-    cmd = { os.getenv("HOME") .. "/.local/share/nvim/mason/bin/omnisharp-mono", "-z", "DotNet:enablePackageRestore=false", "--encoding", "utf-8", "--languageserver" },
+    cmd = { vim.fn.stdpath('data') .. "/mason/bin/omnisharp-mono", "-z", "DotNet:enablePackageRestore=false", "--encoding", "utf-8", "--languageserver" },
     root_markers = { '.git' },
     settings = {
         useModernNet = false,
