@@ -38,9 +38,6 @@ return {
 
             vim.lsp.config('pyright', require('lsp.pyright'))
             vim.lsp.enable('pyright')
-
-            vim.lsp.config('omnisharp', require('lsp.omnisharp'))
-            vim.lsp.enable('omnisharp')
         end
     }
 }
