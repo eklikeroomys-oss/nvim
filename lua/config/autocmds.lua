@@ -59,3 +59,14 @@ vim.api.nvim_create_autocmd('BufEnter',
         vim.opt.expandtab = true
     end
 })
+
+-- CSharp Coding Style:
+vim.api.nvim_create_autocmd('BufEnter',
+{
+    pattern = { "*.cs" },
+    callback = function()
+        vim.opt.tabstop = 4
+        vim.opt.shiftwidth = 4
+        vim.opt.expandtab = true
+    end
+})
