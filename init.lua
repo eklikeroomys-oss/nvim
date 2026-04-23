@@ -1,18 +1,3 @@
--- Setup includes directory:
-local path_separator = package.config:sub(1, 1)
-if path_separator == '\\' then
-    -- Windows:
-    package.path = os.getenv("APPDATA") .. "\\..\\Local\\nvim\\includes\\?.lua;" .. package.path
-else
-    -- Linux
-    local handle = io.popen("dirname $(realpath ~/.config/nvim/init.lua)")
-    if handle ~= nil then
-        local result = handle:read("*a"):gsub('[\n\r]', '')
-        package.path = result .. "/includes/?.lua;" .. package.path
-        handle:close()
-    end
-end
-
 function Global_Setup()
     vim.opt.compatible = false				-- VIM mode, not VI.
     vim.cmd('filetype plugin indent on')	-- Enable filetype detection.
@@ -65,7 +50,7 @@ end
 Global_Setup()
 
 -- Clear Lsp log:
-local lsplog = os.getenv("HOME") .. "/.local/state/nvim/lsp.log"
+local lsplog = vim.fn.stdpath('state') .. "/lsp.log"
 local f=io.open(lsplog,"r")
 if f~=nil then
   io.close(f)
