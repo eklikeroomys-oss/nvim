@@ -43,6 +43,7 @@ return {
             local wk = require("which-key")
             wk.add({
                 { "-b", group = "Buffers" },
+                { "-d", group = "Debugger" },
                 { "-D", group = "Diff Keys" },
                 { "-e", group = "Editing/Formatting" },
                 { "-ei", group = "Indentation" },

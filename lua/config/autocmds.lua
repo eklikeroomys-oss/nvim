@@ -1,7 +1,7 @@
--- Disable folding in telescope window:
-vim.api.nvim_create_autocmd('FileType',
+-- Disable folding in Scratch buffers and similar.
+vim.api.nvim_create_autocmd('BufEnter',
 {
-    pattern = {"TelescopeResults"},
+    pattern = {"[Scratch]", "Test Runner", "NvimTree*"},
     command = "setlocal nofoldenable",
 })
 
